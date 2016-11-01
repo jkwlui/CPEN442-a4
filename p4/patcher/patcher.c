@@ -43,14 +43,10 @@
 void usage(char **argv);
 
 int main(int argc, char **argv) {
-	char line[256];
 	char password[21];
 	int password_len;
     BYTE hash[20];
 	FILE *input = NULL;
-	unsigned int offset;
-	int orig;
-	int newval;
     SHA1_CTX ctx;
 
 	int i;
@@ -110,6 +106,8 @@ int main(int argc, char **argv) {
     }
 	fclose(input);
     printf("Finished patching!\n");
+
+    return 0;
 }
 
 void usage(char** argv) {
